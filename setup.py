@@ -10,11 +10,11 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="apio_django",
-    version="1.0.8",
+    version="1.0.9",
     description="Application error & performance monitoring",
     long_description=README,
     long_description_content_type="text/markdown",
-    url="https://github.com/",
+    url="https://github.com/apio-monitor/apio_django",
     author="Apio Team",
     author_email="apio.monitor@gmail.com",
     license="MIT",

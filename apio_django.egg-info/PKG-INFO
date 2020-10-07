@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
 Name: apio-django
-Version: 1.0.8
+Version: 1.0.9
 Summary: Application error & performance monitoring
-Home-page: https://github.com/
+Home-page: https://github.com/apio-monitor/apio_django
 Author: Apio Team
 Author-email: apio.monitor@gmail.com
 License: MIT
@@ -39,7 +39,8 @@ Description: #Project Description
         
         ##Contact (any queries)
         
-        Email: apio.monitor@gmail.com
+        Email: apio.monitor@gmail.com# apio_django
+        
 Platform: UNKNOWN
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Programming Language :: Python :: 3.6
