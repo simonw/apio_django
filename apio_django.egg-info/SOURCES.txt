@@ -1,0 +1,8 @@
+README.md
+setup.py
+apio_django/middleware.py
+apio_django.egg-info/PKG-INFO
+apio_django.egg-info/SOURCES.txt
+apio_django.egg-info/dependency_links.txt
+apio_django.egg-info/requires.txt
+apio_django.egg-info/top_level.txt
