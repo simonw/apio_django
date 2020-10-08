@@ -7,6 +7,8 @@ Apio helps in monitoring of Applications. You can easily integrate(see setup bel
 
 ##Setup
 
+Installation instructions: https://www.youtube.com/watch?v=tpx4mTuv0-0
+
 1. Create an account on [Apio signup](https://apio.in/signup)
 
 2. Register an application on [Apio onboarding](https://apio.in/onboarding)
@@ -31,4 +33,4 @@ The Apio service is currently in beta testing phase. We don't take any responsbi
 
 ##Contact (any queries)
 
-Email: apio.monitor@gmail.com# apio_django
+Email: apio.monitor@gmail.com
