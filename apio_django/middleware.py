@@ -37,7 +37,7 @@ class ApioMiddleware(MiddlewareMixin):
 				": " + str(sys.exc_info()[1]),
 				"traceback":traceback.format_exc(),
 				"user": str(request.user),
-				"ip_address": request.META.get("REMOTE_ADDR")
+				"ip_address": get_client_ip(request)
 			}		
 			
 			if exception_data["path"] != apio_url_exception:
@@ -70,7 +70,7 @@ class ApioMiddleware(MiddlewareMixin):
 				"path": request.environ["wsgi.url_scheme"] + "://" \
 					+ request.environ["HTTP_HOST"] + request.get_full_path(),
 				"requester": str(request.user),
-				"ip_address": request.META.get("REMOTE_ADDR")
+				"ip_address": get_client_ip(request)
 				}
 			if perf_data["path"] != apio_perf_data_url:
 				# Sending request on another thread
@@ -109,5 +109,13 @@ def send_perf_data_request(perf_data):
 		data=json.dumps(perf_data), 
 			headers=headers)
 	except Exception as e:
-		logger.debug(str(e))	
+		logger.debug(str(e))
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[-1].strip()
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip	
 
