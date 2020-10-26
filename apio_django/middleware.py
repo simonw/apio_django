@@ -37,7 +37,8 @@ class ApioMiddleware(MiddlewareMixin):
 				": " + str(sys.exc_info()[1]),
 				"traceback":traceback.format_exc(),
 				"user": str(request.user),
-				"ip_address": get_client_ip(request)
+				"ip_address": get_client_ip(request),
+				"method": request.method
 			}		
 			
 			if exception_data["path"] != apio_url_exception:
@@ -70,7 +71,8 @@ class ApioMiddleware(MiddlewareMixin):
 				"path": request.environ["wsgi.url_scheme"] + "://" \
 					+ request.environ["HTTP_HOST"] + request.get_full_path(),
 				"requester": str(request.user),
-				"ip_address": get_client_ip(request)
+				"ip_address": get_client_ip(request),
+				"method": request.method
 				}
 			if perf_data["path"] != apio_perf_data_url:
 				# Sending request on another thread
